@@ -22,3 +22,11 @@ Plan
 - Create basic file structure
 - Start with maze validation predicates
   
+December, 7th 2025 11:30 pm - Finishing up first functions and planning next stepa
+
+I completed 3 functions, specifically functions for findng the exit of the maze, validating the maze, and making sure the maze is a rectangle. 
+I only completed functions which are essentially checks for if the maze is a valid maze. I still need to work on logic and other aspects of the
+project.
+
+My next steps are going to be complete functions for finding the start position, counting number of starts and exits, and the function to check that number of rows and columns are the same.
+

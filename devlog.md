@@ -22,3 +22,17 @@ Plan
 - Create basic file structure
 - Start with maze validation predicates
   
+December, 7th 2025 11:30 pm - Finishing up first functions and planning next stepa
+
+I completed 3 functions, specifically functions for findng the exit of the maze, validating the maze, and making sure the maze is a rectangle. 
+I only completed functions which are essentially checks for if the maze is a valid maze. I still need to work on logic and other aspects of the
+project.
+
+My next steps are going to be complete functions for finding the start position, counting number of starts and exits, and the function to check that number of rows and columns are the same.
+
+December, 10th 2025 8:30 pm - Created more helper functions
+
+Continued to project by creating more helper function for my code to make it significantly easier when it comes to implementing logic portion of the project. Will likely, have some more helper functions roughly 2 more for finding cells in the maze. After those two are created I should be able to code the actual logic of the maze solver. 
+
+
+

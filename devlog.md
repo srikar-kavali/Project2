@@ -34,5 +34,10 @@ December, 10th 2025 8:30 pm - Created more helper functions
 
 Continued to project by creating more helper function for my code to make it significantly easier when it comes to implementing logic portion of the project. Will likely, have some more helper functions roughly 2 more for finding cells in the maze. After those two are created I should be able to code the actual logic of the maze solver. 
 
+December, 10th 2025 10:33 pm - Created more helper functions
+
+Created last two helper functions, and can now start working on actual implementation of the logic portion of the project. I expect this to not take as long and that many lines of codes since I have helper functions, but we will see.
+
+
 
 

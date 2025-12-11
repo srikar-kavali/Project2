@@ -34,3 +34,14 @@ count_cell([_|Rest], Cell, Count) :-
 find_start(Maze, Row, Col) :-
     find_cell(Maze, s, 0, Row, Col).
 
+find_cell([Row|_], Cell, RowIndex, RowIndex, ColIndex) :-
+    find_in_row(Row, Cell, 0, ColIndex).
+find_cell([_|Rows], Cell, CurrentRow, RowIndex, ColIndex) :-
+    NextRow is CurrentRow + 1,
+    find_cell(Rows, Cell, NextRow, RowIndex, ColIndex).
+
+% Find cell in a specific row
+find_in_row([Cell|_], Cell, ColIndex, ColIndex) :- !.
+find_in_row([_|Cols], Cell, CurrentCol, ColIndex) :-
+    NextCol is CurrentCol + 1,
+    find_in_row(Cols, Cell, NextCol, ColIndex).

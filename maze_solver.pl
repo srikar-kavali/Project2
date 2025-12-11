@@ -11,9 +11,14 @@ validate_maze(Maze) :-
     ExitCount > 0.
 
 is_rectangular([]).
-is_rectangualr([Row|Rows]) :-
+is_rectangular([Row|Rows]) :-
     length(Row, Len),
-    all_same_lengths(Rows, Len).
+    all_same_length(Rows, Len).
+
+all_same_length([], _).
+all_same_length([Row|Rows], Len) :-
+    length(Row, Len),
+    all_same_length(Rows, Len).
 
 count_starts(Maze, Count) :-
     flatten(Maze, Cells),

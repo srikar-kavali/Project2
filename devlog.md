@@ -38,6 +38,8 @@ December, 10th 2025 10:33 pm - Created more helper functions
 
 Created last two helper functions, and can now start working on actual implementation of the logic portion of the project. I expect this to not take as long and that many lines of codes since I have helper functions, but we will see.
 
+December, 10th 2025 11:55 pm - Finished project
 
+Project is finished and completed. This project wasn't as difficult or challenging as the previoud project. 
 
 

@@ -45,3 +45,41 @@ find_in_row([Cell|_], Cell, ColIndex, ColIndex) :- !.
 find_in_row([_|Cols], Cell, CurrentCol, ColIndex) :-
     NextCol is CurrentCol + 1,
     find_in_row(Cols, Cell, NextCol, ColIndex).
+
+solve_maze(Maze, Row, Col, _, []) :-
+    get_cell(Maze, Row, Col, e).  % Reached exit
+
+solve_maze(Maze, Row, Col, Visited, [Action|RestActions]) :-
+    \+ member((Row, Col), Visited),  % Not visited this cell yet
+    get_cell(Maze, Row, Col, Cell),
+    (Cell = s ; Cell = f ; Cell = e),  % Valid cell to be on
+    move(Action, Row, Col, NewRow, NewCol),
+    in_bounds(Maze, NewRow, NewCol),
+    get_cell(Maze, NewRow, NewCol, NewCell),
+    NewCell \= w,  % Can't move into wall
+    solve_maze(Maze, NewRow, NewCol, [(Row, Col)|Visited], RestActions).
+
+% Get cell value at position
+get_cell(Maze, Row, Col, Cell) :-
+    nth0(Row, Maze, RowList),
+    nth0(Col, RowList, Cell).
+
+% Check if position is within maze bounds
+in_bounds(Maze, Row, Col) :-
+    Row >= 0,
+    Col >= 0,
+    length(Maze, NumRows),
+    Row < NumRows,
+    Maze = [FirstRow|_],
+    length(FirstRow, NumCols),
+    Col < NumCols.
+
+% Define movement actions
+move(up, Row, Col, NewRow, Col) :-
+    NewRow is Row - 1.
+move(down, Row, Col, NewRow, Col) :-
+    NewRow is Row + 1.
+move(left, Row, Col, Row, NewCol) :-
+    NewCol is Col - 1.
+move(right, Row, Col, Row, NewCol) :-
+    NewCol is Col + 1.
